@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  travel-agent-bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      - BOT_TOKEN=7135061417:AAFc2OfObCI9t2ds5uyoFvo7hIKGt4SZjXc
+    volumes:
+      - ./bot:/app/bot
+      - ./bot/db:/app/bot/db

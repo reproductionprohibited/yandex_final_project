@@ -1,0 +1,19 @@
+<header class="p-3 text-bg-warning">
+  <div class="container">
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+      <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+        <li><a href="{{ url_for('mainpage') }}" class="btn btn-primary px-2">Home</a></li>
+      </ul>
+      
+      <!-- IF USER IS AUTHENTICATED -->
+      <div class="text-end">
+        <a href="{{ url_for('bot_users') }}" class="btn btn-success me-2">Users</button></a>
+        <a href="{{ url_for('bot_journeys') }}" class="btn btn-success me-2">Journeys</button></a>
+        <!-- ADD LOG OUT BUTTON -->
+      </div>
+      <!-- ELSE -->
+      <!-- ADD LOG IN BUTTON -->
+
+    </div>
+  </div>
+</header>
