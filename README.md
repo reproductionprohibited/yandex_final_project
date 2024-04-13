@@ -1,9 +1,7 @@
 
 # Travel agent 3.0 2024 pro max
 
-Telegram username: ``` @travelagenttprodbot ```
-
-This is a project for the individual stage of PROD olympiad.
+Telegram bot username: ``` @travelagenttprodbot ```
 
 ## Setup project
 
