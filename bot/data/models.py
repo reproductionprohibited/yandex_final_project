@@ -6,7 +6,7 @@ from sqlalchemy.orm import relationship
 from .db_session import SqlAlchemyBase
 
 
-class Admin(SqlAlchemyBase):
+class Admin(UserMixin, SqlAlchemyBase):
     __tablename__ = 'admins'
 
     id = Column(Integer, primary_key=True, autoincrement=True)

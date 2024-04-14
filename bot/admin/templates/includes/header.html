@@ -6,14 +6,15 @@
       </ul>
       
       <!-- IF USER IS AUTHENTICATED -->
-      <div class="text-end">
-        <a href="{{ url_for('bot_users') }}" class="btn btn-success me-2">Users</button></a>
-        <a href="{{ url_for('bot_journeys') }}" class="btn btn-success me-2">Journeys</button></a>
-        <!-- ADD LOG OUT BUTTON -->
-      </div>
-      <!-- ELSE -->
-      <!-- ADD LOG IN BUTTON -->
-
+      {% if current_user.is_authenticated %}
+        <div class="text-end">
+          <a href="{{ url_for('bot_users') }}" class="btn btn-success me-2">Users</button></a>
+          <a href="{{ url_for('bot_journeys') }}" class="btn btn-success me-2">Journeys</button></a>
+          <a href="{{ url_for('logout') }}" class="btn btn-danger me-2">Log out</button></a>
+        </div>
+      {% else %}
+        <a href="{{ url_for('login') }}" class="btn btn-primary me-2">Log in</button></a>
+      {% endif %}
     </div>
   </div>
 </header>

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+Log in
+{% endblock %}
+
+{% block content %}
+
+<div class="row text-center ms-2 me-2">
+  <div class="col-md-3 col-lg-3 col-sm-2"></div>
+  <div class="col-md-6 col-sm-10 col-lg-6">
+    <main class="form-signin w-100 mx-auto">
+      <form role="form" method="post" action="">
+        {{ form.csrf_token }}
+        <h1 class="h3 mb-3 fw-normal text-center mt-5">Sign in</h1>
+
+        <div class="form-floating">
+          {{ form.username(placeholder="username", class="form-control mb-2") }}
+          {{ form.username.label }}
+            {% if form.username.errors %}
+              {% for error in form.username.errors %}
+              <div class="alert alert-danger" role="alert">
+                {{ error }}
+              </div>
+              {% endfor %}
+            {% endif %}
+        </div>
+        <div class="form-floating">
+          {{ form.password(placeholder="password", class="form-control mb-2") }}
+          {{ form.password.label }}
+            {% if form.password.errors %}
+              {% for error in form.password.errors %}
+                <div class="alert alert-danger" role="alert">
+                  {{ error }}
+                </div>
+              {% endfor %}
+            {% endif %}
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+      </form>
+    </main>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+
+{% endblock %}

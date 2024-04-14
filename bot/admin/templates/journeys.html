@@ -22,7 +22,8 @@ Journeys
           <div class="card-body">
             <h4>{{ journey.title }}</h4>
             <p><i>{{ journey.description }}</i></p>
-            <a href="{{ url_for('bot_journey_detail', id = journey.id) }}"></a>
+            <!-- <a href="{{ url_for('bot_journey_detail', id=journey.id) }}">details</a> -->
+            <a href="{{ url_for('bot_journey_detail', id=journey.id) }}">Details</a>
           </div>
         </div>
       {% endfor %}

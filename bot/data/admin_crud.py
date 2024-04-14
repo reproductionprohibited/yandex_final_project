@@ -27,13 +27,13 @@ def get_journey_by_id(
     db_session: Session,
     journey_id: int,
 ) -> Journey | None:
-    return db_session.query(Journey).get(journey_id)
+    return db_session.query(Journey).filter_by(id = journey_id).first()
 
 def get_all_journey_notes(
     db_session: Session,
     journey_id: int,
 ) -> List[Note]:
-    journey = db_session.query(Journey).get(journey_id)
+    journey = get_journey_by_id(db_session, journey_id=journey_id)
     if journey is None:
         return []
     

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ journey.title }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="px-4 py-5 my-5 text-center">
+  <h1 class="display-5 fw-bold text-body-emphasis">{{ journey.title }}</h1>
+  <div class="col-lg-6 mx-auto">
+    <p class="lead mb-5">
+      {{ journey.description }}
+    </p>
+
+    {% if locations %}
+      <h3 class="text-info"><i>Locations</i></h3>
+    {% else %}
+      <h4 class="text-warning"><i>No locations in this journey</i></h4>
+    {% endif %}
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+      {% for location in locations %}
+        {% with location=location %}
+          {% include "includes/location_card.html" %}
+        {% endwith %}
+      {% endfor %}
+    </div>
+
+    {% if notes %}
+      <h3 class="text-info"><i>Notes</i></h3>
+    {% else %}
+      <h4 class="text-warning"><i>No notes for this journey</i></h4>
+    {% endif %}
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      {% for note in notes %}
+        {% with note=note %}
+          {% include "includes/note_card.html" %}
+        {% endwith %}
+      {% endfor %}
+    </div>
+  
+  </div>
+</div>
+
+{% endblock %}
