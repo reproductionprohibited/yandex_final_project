@@ -9,7 +9,7 @@ Telegram bot username: ``` @travelagenttprodbot ```
 
 2.1. If you use Docker:
 
-* Launch Docker (e.g. Open Docker for Desktop application). Don't use Github CI/CD tools to start the bot
+* Launch Docker (e.g. open Docker for Desktop application). Don't use Github CI/CD tools to start the bot
 
 * Enter ```docker compose up -d``` into the terminal
 
