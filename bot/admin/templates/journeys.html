@@ -7,28 +7,26 @@ Journeys
 
 {% block content %}
 
-<div class="px-4 py-5 my-5 text-center">
-  <h1 class="display-1 text-body-emphasis">Journeys</h1>
+<div class="justify-content-center px-4 py-5 my-5 text-center row">
+  <h1 class="display-1 text-body-emphasis">Users</h1>
   <h4 class="text-body-emphasis">Unique: [ {{ journeys|length }} ]</h4>
-
-
-  <div class="col-lg-6 mx-auto">
-    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-      {% for journey in journeys %}
-        <div class="card text-white bg-primary col-md-8 col-sm-12 col-lg-6">
-          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info text-dark">
-            {{ loop.index }}
-          </span>
-          <div class="card-body">
-            <h4>{{ journey.title }}</h4>
-            <p><i>{{ journey.description }}</i></p>
-            <!-- <a href="{{ url_for('bot_journey_detail', id=journey.id) }}">details</a> -->
-            <a href="{{ url_for('bot_journey_detail', id=journey.id) }}">Details</a>
-          </div>
+  <div class="col-sm-0"></div>
+  <div class="col-md-8 col-sm-12 col-lg-6 text-center justify-content-center row">
+    {% for journey in journeys %}
+      <div class="card text-white bg-primary col-md-8 col-sm-12 col-lg-6 mb-4 me-2">
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info text-dark">
+          {{ loop.index }}
+        </span>
+        <div class="card-body">
+          <h4>{{ journey.title }}</h4>
+          <p><i>{{ journey.description }}</i></p>
+          <!-- <a href="{{ url_for('bot_journey_detail', id=journey.id) }}">details</a> -->
+          <a href="{{ url_for('bot_journey_detail', id=journey.id) }}">Details</a>
         </div>
-      {% endfor %}
+      </div>
+    {% endfor %}
     </div>
-  </div>
 </div>
+
 
 {% endblock %}

@@ -84,7 +84,6 @@ def bot_journey_detail(id: int):
     locations = journey.locations
     notes = journey.notes
 
-    print(locations)
     return render_template('journey_detail.html', journey=journey, locations=locations, notes=notes)
 
 
